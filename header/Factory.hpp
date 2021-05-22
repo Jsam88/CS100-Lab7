@@ -42,7 +42,11 @@ class Factory {
                     OperatorStack.push(input[i]);   //else push the operator to the operator stack
                 }
             }
+		
 
+	if (OperatorStack.size() >= OperandStack.size()){
+                return nullptr;
+	}
 	while (!OperatorStack.empty()){
 
                 string o = OperatorStack.top();

@@ -43,6 +43,41 @@ class Factory {
                 }
             }
         }
+
+	while (!OperatorStack.empty()){
+
+                string o = OperatorStack.top();
+                Base* left = OperandStack.top();
+                OperandStack.pop();
+                Base* right = OperandStack.top();
+                OperandStack.pop();
+
+                if (o == "-"){
+                    OperandStack.push(new Sub(left, right));
+                }
+                else if (o == "+"){
+                    OperandStack.push(new Add(left, right));
+                }
+                else if (o == "/"){
+                    OperandStack.push(new Div(left, right));
+                }
+                else if (o == "*"){
+                    OperandStack.push(new Mult(left, right));
+                }
+                else if (o == "**"){
+                    OperandStack.push(new Pow(left, right));
+                }
+
+                else {
+                    return nullptr;
+                }
+
+                OperatorStack.pop();
+           
+		 }
+
+           	return OperandStack.top();
+        }
 };
 
 #endif

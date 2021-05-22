@@ -1,14 +1,6 @@
 #include <iostream>
 
-#include "base.hpp"
-#include "Add.hpp"
-#include "op.hpp" 
-#include "Pow.hpp"
-#include <string>
-#include "Sub.hpp"
-#include "Div.hpp"
-#include "Mult.hpp"
-#include "Random.hpp"
+#include "../header/Factory.hpp"
 
 
 // int main() {
@@ -38,8 +30,7 @@ int main(int argc, char** argv){
         cout << "Invalid Input" << endl;
     }
     else {
-        cout << answer->stringify() << endl;
-        cout << answer->evaluate() << endl;
+        cout << answer->stringify() << '=' << answer->evaluate() << endl;
     }
 
     return 0;

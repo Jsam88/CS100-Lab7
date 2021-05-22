@@ -42,7 +42,6 @@ class Factory {
                     OperatorStack.push(input[i]);   //else push the operator to the operator stack
                 }
             }
-        }
 
 	while (!OperatorStack.empty()){
 
@@ -76,8 +75,10 @@ class Factory {
            
 		 }
 
+
            	return OperandStack.top();
-        }
+
+}
 };
 
 #endif

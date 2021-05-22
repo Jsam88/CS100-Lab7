@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "../header/Factory.hpp"
+#include "header/Factory.hpp"
 
 TEST(FactoryTest, OpTest){
     const char* input[] = {"./test", "8"};
@@ -25,7 +25,7 @@ TEST(FactoryTest, SubTest){
     Factory calculate;
     Base* base = calculate.parse((char**)input, numInputs);
     EXPECT_EQ(base->stringify(), "5 - 4");
-    EXPECT_EQ(base->evaluate(), -1);
+    EXPECT_EQ(base->evaluate(), 1);
 }
 
 TEST(FactoryTest, MultTest){
@@ -51,7 +51,7 @@ TEST(FactoryTest, PowTest){
     int numInputs = 4;
     Factory calculate;
     Base* base = calculate.parse((char**)input, numInputs);
-    EXPECT_EQ(base->stringify(), "2 ** 2");
+    EXPECT_EQ(base->stringify(), "2 ^ 2");
     EXPECT_EQ(base->evaluate(), 4);
 }
 

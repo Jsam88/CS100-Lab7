@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "../header/Factory.hpp"
+#include "header/Factory.hpp"
 
 
 // int main() {

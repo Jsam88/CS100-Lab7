@@ -12,6 +12,11 @@ class Mult: public Base {
                 Base* Rnode = NULL;
                 std::string str;
 	 public:
+		~Mult() {
+                        delete this->Lnode;
+                        delete this->Rnode;
+                }
+
                 Mult(Base* leftPtr, Base* rightPtr) {
                         Lnode = leftPtr;
                         Rnode = rightPtr;

@@ -15,6 +15,10 @@ class Sub: public Base {
                 std::string str;
 
         public:
+		~Sub() {
+  			delete this->Lnode;
+  			delete this->Rnode;
+		}
                 Sub(Base* LEFT, Base* RIGHT) {
                         Lnode = LEFT;
                         Rnode = RIGHT;

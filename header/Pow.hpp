@@ -14,6 +14,11 @@ class Pow: public Base {
                 Base* Rnode = NULL;
                 std::string str;
         public:
+		~Pow() {
+                        delete this->Lnode;
+                        delete this->Rnode;
+                }
+
                 Pow(Base * LEFT, Base* RIGHT) {
                         Lnode = LEFT;
                         Rnode = RIGHT;

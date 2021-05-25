@@ -13,6 +13,10 @@ class Div: public Base {
                 std::string str;
 
         public:
+		~Div() {
+ 			 delete this->Lnode;
+ 			 delete this->Rnode;
+		}
                 Div(Base* LEFT, Base* RIGHT) {
                         Lnode = LEFT;
                         Rnode = RIGHT;

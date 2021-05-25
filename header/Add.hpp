@@ -13,6 +13,10 @@ class Add: public Base {
                 Base* Rnode = NULL;
                 std::string str;
         public:
+		~Add() {
+			delete this->Lnode;
+			delete this->Rnode;
+		}
                 Add(Base* LEFT, Base* RIGHT) {
                         Lnode = LEFT;
                         Rnode = RIGHT;
